@@ -1,0 +1,24 @@
+.PostUpdate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-top: 30px;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%234D457BFF' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  border-radius: 10px;
+
+  &__input {
+    border: none;
+    border-bottom: 1px solid #4d457b;
+    font-family: inherit;
+    font-size: 0.9rem;
+    width: 50%;
+    padding: 10px 5px;
+    margin: 5px;
+    color: #4d457b;
+  }
+
+  &__button {
+    margin-top: 10px;
+  }
+}

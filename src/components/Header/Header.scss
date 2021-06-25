@@ -1,0 +1,22 @@
+.buttonHeader {
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: #b8b3d2;
+  border: 0;
+  color: white;
+  transition: background-color 0.12s;
+  font-size: inherit;
+  min-width: 100px;
+  text-decoration: none;
+  
+  &:hover {
+    background-color: #4d457b;
+  }
+}
+
+.is-active {
+  background-color: #443c70;
+}
