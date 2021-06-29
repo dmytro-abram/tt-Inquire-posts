@@ -6,11 +6,7 @@ export function get(url, options) {
     .then(result => result.data);
 }
 
-export function remove(url) {
-  return get(url, { method: 'DELETE' });
-}
-
-export function post(url, data) {
+export function save(url, data) {
   return get(url, {
     method: 'POST',
     headers: {
@@ -18,4 +14,18 @@ export function post(url, data) {
     },
     body: JSON.stringify(data),
   });
+}
+
+export function patch(url, data) {
+  return get(url, {
+    method: 'PATCH',
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+    body: JSON.stringify(data),
+  });
+}
+
+export function remove(url) {
+  return get(url, { method: 'DELETE' });
 }

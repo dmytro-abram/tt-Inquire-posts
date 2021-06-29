@@ -7,7 +7,7 @@ import { PostsList } from './components/PostsList';
 import { PostDetails } from './components/PostDetails';
 import { PostAdd } from './components/PostAdd';
 import { PostUpdate } from './components/PostUpdate'
-import { getPosts, getUserPosts, deletePost } from './api/posts';
+import { getPosts, getUserPosts, deletePost, createPost, update } from './api/posts';
 import { getUsers } from './api/users';
 
 const App = () => {
@@ -49,6 +49,21 @@ const App = () => {
       });
   };
 
+  const addNewPost = (postData) => {
+    createPost(postData)
+      .then((result) => {
+        setPosts(currentPost => [...currentPost, result])
+    });
+  }
+
+  const updatePost = (postData) => {
+    update(postData)
+      .then((result) => {
+        setPosts(currentPost => [...currentPost, result])
+    });
+  }
+
+
   return(
     <div className="App">
       <header className="App__header">
@@ -57,13 +72,16 @@ const App = () => {
 
       <Switch>
         <Route path='/post-add'>
-          <PostAdd />
+          <PostAdd addPost={addNewPost} />
         </Route>
 
       <Route
         path='/post-update/:postId'
-        component={PostUpdate}
       >
+        <PostUpdate
+          selectedPostId={selectedPostId}
+          updatePost = {updatePost}
+        />
       </Route>
 
         <Route path='/' exact>

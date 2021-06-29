@@ -1,4 +1,4 @@
-import { get, remove, post } from './api';
+import { get, remove, post, save } from './api';
 
 export function getPostComments(postId) {
   return get(`/comments?postId=${postId}`);
@@ -9,5 +9,5 @@ export function deleteComment(commentId) {
 }
 
 export function addComment(comment) {
-  return post(`/comments`, comment);
+  return save(`/comments`, comment);
 }

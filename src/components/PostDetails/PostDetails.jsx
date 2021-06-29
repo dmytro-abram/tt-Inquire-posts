@@ -9,11 +9,7 @@ import { PostUpdate } from '../PostUpdate';
 
 import './PostDetails.scss';
 
-import {
-  deleteComment,
-  getPostComments,
-  addComment,
-} from '../../api/comments';
+import { deleteComment, getPostComments, addComment} from '../../api/comments';
 import { getPostDetails } from '../../api/posts';
 
 export const PostDetails = ({ selectedPostId }) => {
@@ -53,6 +49,7 @@ export const PostDetails = ({ selectedPostId }) => {
         setComments(currentComment => [...currentComment, result]);
       });
   };
+
 
   return (
     <div className="PostDetails">
